@@ -1,0 +1,26 @@
+#lgn { 
+    font-family: Arial, sans-serif;
+font-size: 16px;
+line-height: 1.6;
+color: rgb(86, 173, 15);
+margin-bottom: 10px;
+border: 1px solid #ccc;
+padding: 15px;
+border-radius: 25px;
+box-shadow: 2px 2px 5px rgba(216, 13, 13, 0.1);
+color: rgb(0, 217, 255);
+font-size:16px; 
+}
+#rgs { 
+    font-family: Arial, sans-serif;
+font-size: 16px;
+line-height: 1.6;
+color: rgb(86, 173, 15);
+margin-bottom: 10px;
+border: 1px solid #ccc;
+padding: 15px;
+border-radius: 25px;
+box-shadow: 2px 2px 5px rgba(216, 13, 13, 0.1);
+color: rgb(231, 27, 27);
+font-size:16px; 
+}
