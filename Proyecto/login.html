@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>La Guia del Kchimbo</title>
+    <link rel="icon" href="../imagenes/Logoweb.webp">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Registro">
+    </head>
+    <body>
+    <main>
+        <div>
+            <h1 id="lgn">Login 
+                <form method="post">
+                    <label for="nombreUsuario"> Ingresa tu Nombre de usuario</label>
+                    <input type="text"  id="nombreUsuario" required=""><br>
+                    <label for="nombreUsuario"> Ingresa tu Contrañeña</label>
+                    <input type="text"  id="contraseñaUsuario" required=""><br>
+                    <input type="button" value="Acceder" id="accederBtn" >
+                </form>
+            </h1>
+        </div>
+    </main>
+    </body>
+    <footer>
+    
+    </footer>
+
+    <script>
+        var nombreInput = document.getElementById('nombreUsuario');
+        var contraseñaInput= document.getElementById('contraseñaUsuario');
+        var registrarInput = document.getElementById('accederBtn');
+        
+        accederBtn.addEventListener('click',function(){
+            var nombre = nombreInput.value;
+            var contraseña = contraseñaInput.value;
+        
+            nombreInput.value = '';
+            contraseñaInput.value = '';
+            });
+    </script>
+</html>

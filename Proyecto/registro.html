@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>La Guia del Kchimbo</title>
+    <link rel="icon" href="../imagenes/Logoweb.webp">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Registro">
+    </head>
+    <body>
+    <main>
+        <div>
+            <h1 id="rgs">Crear Cuenta 
+                <form method="post">
+                    <label for="NomApe">Ingresa tu nombre</label>
+                    <input type="text" id="NomApe" required=""><br>
+                    <label for="dni">Ingresa tu DNI</label>
+                    <input type="text" id="dni" required=""><br>
+                    <label for="fechaNac">Ingresa tu fecha de nacimiento</label>
+                    <input type="date" id="fechaNac" required=""><br>
+                    <label for="codEst">Ingresa tu codigo de estudiante</label>
+                    <input type="text" id="codEst" required=""><br>
+                    <label for="combo-box">Ingresa tu Facultad</label>
+                    <select id="combo-box">
+                        <option value="opcion 1">Facultad de
+                            Administración</option>
+                        <option value="opcion 2">Facultad de Ciencias Económicas</option>
+                        <option value="opcion 3">Facultad de Ciencias Financieras y Contables</option>
+                        <option value="opcion 4">Facultad de Ciencias
+                            Sociales</option>
+                        <option value="opcion 5">Facultad de Derecho y Ciencia Política
+                        </option>
+                        <option value="opcion 6">Facultad de
+                            Educación</option>
+                        <option value="opcion 7">Facultad de Humanidades</option>
+                        <option value="opcion 8">Facultad de Ingeniería Geográfica, Ambiental y Ecoturismo</option>
+                        <option value="opcion 9">Facultad de Oceanografía, Pesquería, Ciencias Alimentarias y Acuicultura
+                        </option>
+                        <option value="opcion 10">Facultad de Ingeniería Electrónica e Informática
+                        </option>
+                        <option value="opcion 11">Facultad de Ciencias Naturales y Matemática</option>
+                        <option value="opcion 12">Facultad de Medicina "Hipólito Unanue"</option>
+                        <option value="opcion 13">Facultad de
+                            Odontología</option>
+                        <option value="opcion 14">Facultad de Tecnología Médica</option>
+                        <option value="opcion 15">Facultad de Psicología</option>
+                        </option>
+                    </select><br>
+                    <label for="correo">Ingresa tu correo electronico</label>
+                    <input type="text" id="correo" required=""><br>
+                    <label for="contraseña">Ingresa tu contraseña</label>
+                    <input type="text" id="contraseña" required=""><br>
+                    <input type="button" value="Registrarse" id="registroBtn">
+                </form>
+            </h1>
+        </div>
+    </main>
+    </body>
+    <footer>
+    
+    </footer>
+
+    <script>
+        var nombreRInput = document.getElementById('NomApe');
+        var dniInput= document.getElementById('dni');
+        var fechaImp = document.getElementById('fechaNac');
+        var codigoEst = document.getElementById('codEst');
+        var facultadImp= document.getElementById('combo-box');
+        var correoImp = document.getElementById('correo');
+        var contraseñaRImp = document.getElementById('contraseña');
+        var registroB = document.getElementById('registroBtn');
+        registroBtn.addEventListener('click',function(){
+            var nombreR = nombreRInput.value;
+            var dni = dniInput.value;
+            var fecha = fechaImp.value;
+            var codigoE = codigoEst.value;
+            var facultad = facultadImp.value;
+            var correoR = correoImp.value;
+            var contraseñaR = contraseñaRImp.value;
+        
+            nombreRInput.value = '';
+            dniInput.value = '';
+            fechaImp.value = '';
+            codigoEst.value = '';
+            facultadImp.value = '';
+            correoImp.value = '';
+            contraseñaRImp.value = '';
+            facultadImp.selectedIndex = 0;
+            });
+        
+    </script>
+        
+</html>
