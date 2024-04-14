@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>La Guia del Kchimbo</title>
+    <!-- La siguiente línea carga el logo de la página desde la carpeta static -->
+    <img src="{{ url_for('static', filename='Imagenes/Logoweb.webp') }}">
+    <!-- La siguiente línea establece el ícono de la página en la pestaña del navegador -->
+    <link rel="icon" href="{{ url_for('static', filename='Imagenes/Logoweb.webp') }}">
+    <!-- La siguiente línea carga la hoja de estilos CSS desde la carpeta static -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Estilo/estilos.css') }}">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Registro">
+    <style>
+        /* Estilos para el bloque de registro */
+        #rgs {
+            text-align: center; /* Alineación centrada del texto */
+            font-family: Arial, sans-serif; /* Familia de fuentes */
+            font-size: 16px; /* Tamaño de fuente */
+            line-height: 1.6; /* Altura de línea */
+            color: rgb(231, 27, 27); /* Color del texto */
+            margin-bottom: 10px; /* Margen inferior */
+            border: 1px solid #ccc; /* Borde sólido de 1 píxel con color gris */
+            padding: 15px; /* Relleno interno */
+            border-radius: 25px; /* Borde redondeado */
+            box-shadow: 2px 2px 5px rgba(216, 13, 13, 0.1); /* Sombra */
+        }
+
+        label {
+            color: rgb(0, 0, 0); /* Color del texto */
+            font-family: 'Courier New', Courier, monospace; /* Familia de fuentes */
+            font-size: 13px; /* Tamaño de fuente */
+        }
+
+        /* Estilos para los campos de texto */
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: calc(100% - 30px); /* Ancho calculado con margen izquierdo y derecho */
+            padding: 10px; /* Relleno interno */
+            margin-bottom: 15px; /* Margen inferior */
+            border: 1px solid #ccc; /* Borde sólido con color gris */
+            border-radius: 5px; /* Borde redondeado */
+            box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+        }
+
+        /* Estilos para el botón de registro */
+        input[type="submit"] {
+            width: calc(100% - 30px); /* Ancho calculado con margen izquierdo y derecho */
+            padding: 10px; /* Relleno interno */
+            background-color: #4caf50; /* Color de fondo */
+            color: #ffffff; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Borde redondeado */
+            cursor: pointer; /* Cursor de tipo puntero */
+            transition: background-color 0.3s; /* Transición suave del color de fondo */
+        }
+
+        /* Estilos para el botón de registro al pasar el ratón */
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Cambio de color de fondo al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div>
+        <h1 id="rgs">Crear Cuenta 
+            <form method="post" action="/registro"> <!-- Corregir la acción del formulario -->
+                <!-- Etiqueta y campo de texto para ingresar el nombre -->
+                <label for="NomApe">Ingresa tu nombre</label>
+                <input type="text" id="NomApe" name="nombre" required=""><br>
+                <!-- Etiqueta y campo de texto para ingresar el DNI -->
+                <label for="dni">Ingresa tu DNI</label>
+                <input type="text" id="dni" name="dni" required=""><br>
+                <!-- Etiqueta y campo de texto para ingresar la fecha de nacimiento -->
+                <label for="fechaNac">Ingresa tu fecha de nacimiento</label>
+                <input type="date" id="fechaNac" name="fecha_nacimiento" required=""><br>
+                <!-- Etiqueta y campo de texto para ingresar el código de estudiante -->
+                <label for="codEst">Ingresa tu código de estudiante</label>
+                <input type="text" id="codEst" name="codigo_estudiante" required=""><br>
+                <!-- Etiqueta y menú desplegable para seleccionar la facultad -->
+                <label for="combo-box">Ingresa tu Facultad</label>
+                <select id="combo-box" name="facultad">
+                    <option value="opcion 1">Seleccione una facultad</option>
+                    <option value="opcion 2">Facultad de
+                        Administración</option>
+                    <option value="opcion 3">Facultad de Ciencias Económicas</option>
+                    <option value="opcion 4">Facultad de Ciencias Financieras y Contables</option>
+                    <option value="opcion 5">Facultad de Ciencias
+                        Sociales</option>
+                    <option value="opcion 6">Facultad de Derecho y Ciencia Política
+                    </option>
+                    <option value="opcion 7">Facultad de
+                        Educación</option>
+                    <option value="opcion 8">Facultad de Humanidades</option>
+                    <option value="opcion 9">Facultad de Ingeniería Geográfica, Ambiental y Ecoturismo</option>
+                    <option value="opcion 10">Facultad de Oceanografía, Pesquería, Ciencias Alimentarias y Acuicultura
+                    </option>
+                    <option value="opcion 11">Facultad de Ingeniería Electrónica e Informática
+                    </option>
+                    <option value="opcion 12">Facultad de Ciencias Naturales y Matemática</option>
+                    <option value="opcion 13">Facultad de Medicina "Hipólito Unanue"</option>
+                    <option value="opcion 14">Facultad de
+                        Odontología</option>
+                    <option value="opcion 15">Facultad de Tecnología Médica</option>
+                    <option value="opcion 16">Facultad de Psicología</option>
+                    </option>
+                    <!-- Otras opciones omitidas para abreviar -->
+                </select><br>
+                <!-- Etiqueta y campo de texto para ingresar el correo electrónico -->
+                <label for="correo">Ingresa tu correo electrónico</label>
+                <input type="text" id="correo" name="correo_electronico" required=""><br>
+                <!-- Etiqueta y campo de texto para ingresar la contraseña -->
+                <label for="contraseña">Ingresa tu contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" required=""><br> <!-- Cambiar el tipo de input a 'password' -->
+                <!-- Botón para enviar el formulario -->
+                <input type="submit" value="Registrarse" id="registroBtn">
+            </form>
+        </h1>
+    </div>
+</main>
+<footer>
+    
+</footer>
+</body>
+</html>
+

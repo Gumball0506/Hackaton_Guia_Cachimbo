@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>La Guia del Kchimbo</title>
+    <!-- La siguiente línea carga el logo de la página desde la carpeta static -->
+    <link rel="icon" href="{{ url_for('static', filename='Imagenes/Logoweb.webp') }}">
+    <!-- Estilos CSS para las etiquetas de los campos -->
+    <style>
+        label {
+            /* Estilos para las etiquetas de los campos */
+            color: rgb(0, 0, 0); /* Color del texto */
+            font-family: 'Courier New', Courier, monospace; /* Familia de fuentes */
+            font-size: 13px; /* Tamaño de fuente */
+        }
+    </style>
+    <!-- La siguiente línea carga la hoja de estilos CSS desde la carpeta static -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Estilo/estilos.css') }}">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Registro">
+</head>
+<body>
+<main>
+    <div>
+        <!-- Lista de enlaces para acceder y registrarse -->
+        <ul>
+            <li><a href="{{ url_for('process_login') }}">Acceder</a></li> <!-- Enlace para acceder -->
+            <li><a href="{{ url_for('registro') }}">Crear Cuenta</a></li> <!-- Enlace para registrarse -->
+        </ul>
+    </div>
+    <div>
+        <!-- Lista de elementos de navegación -->
+        <ul>
+            <li>Inicio</li>
+            <li>Facultades</li>
+            <li>Deportes</li>
+            <li>Profesores</li>
+            <li>Seminarios</li>
+            <li>Eventos</li>
+            <li>Calendario</li>
+            <li>Conferencias</li>
+        </ul>
+    </div>
+</main>
+</body>
+<footer>
+</footer>
+<script></script>
+</html>

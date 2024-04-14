@@ -1,0 +1,36 @@
+#lgn { 
+    /* Estilos para el bloque de login */
+    text-align: center; /* Alineación centrada del texto */
+    font-family: arial, sans-serif; /* Familia de fuentes */
+    font-size: 16px; /* Tamaño de fuente */
+    line-height: 1.6; /* Altura de línea */
+    color: rgb(86, 173, 15); /* Color del texto */
+    margin-bottom: 10px; /* Margen inferior */
+    border: 1px solid #ccc; /* Borde sólido de 1 píxel con color gris */
+    padding: 135px; /* Relleno interno */
+    border-radius: 25px; /* Borde redondeado */
+    box-shadow: 2px 2px 5px rgba(216, 13, 13, 0.1); /* Sombra */
+}
+
+label {
+    /* Estilos para las etiquetas de los campos */
+    color: rgb(0, 0, 0); /* Color del texto */
+    font-family: 'Courier New', Courier, monospace; /* Familia de fuentes */
+    font-size: 13px; /* Tamaño de fuente */
+}
+
+#rgs { 
+    /* Estilos para el bloque de registro */
+    text-align: center; /* Alineación centrada del texto */
+    font-family: Arial, sans-serif; /* Familia de fuentes */
+    font-size: 16px; /* Tamaño de fuente */
+    line-height: 1.6; /* Altura de línea */
+    color: rgb(231, 27, 27); /* Color del texto */
+    margin-bottom: 10px; /* Margen inferior */
+    border: 1px solid #ccc; /* Borde sólido de 1 píxel con color gris */
+    padding: 15px; /* Relleno interno */
+    border-radius: 25px; /* Borde redondeado */
+    box-shadow: 2px 2px 5px rgba(216, 13, 13, 0.1); /* Sombra */
+}
+
+
