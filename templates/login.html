@@ -2,9 +2,8 @@
 <html>
 <head>
     <title>La Guia del Kchimbo</title>
-    <!-- Se carga el logo de la página desde la carpeta static -->
-    <link rel="icon" href="{{ url_for('static', filename='imagenes/Logoweb.webp') }}">
-    <!-- Estilos CSS para el bloque de login -->
+    <!-- La siguiente línea carga la hoja de estilos CSS desde la carpeta static -->
+    <link rel="stylesheet" href="/Estilo/estilos.css">
     <style>
         /* Estilos para el cuerpo de la página */
         body {
@@ -58,7 +57,7 @@
         }
     </style>
     <meta charset="utf-8">
-    <meta name="keywords" content="Registro">
+    <meta name="keywords" content="login">
 </head>
 <body>
 <main>
@@ -66,35 +65,50 @@
     <div id="login-container">
         <h1>Login</h1>
         <!-- Formulario de login -->
-        <form method="post" action="/login"> <!-- Corregir la acción del formulario -->
+        <form id="login-form">
             <!-- Etiqueta y campo de texto para ingresar el nombre de usuario -->
-            <label class="input-label" for="nombreUsuario"> Ingresa tu Nombre de usuario</label>
+            <label class="input-label" for="nombreUsuario">Ingresa tu Nombre de usuario</label>
             <input type="text" id="nombreUsuario" name="username" required><br>
             <!-- Etiqueta y campo de texto para ingresar la contraseña -->
-            <label class="input-label" for="contraseñaUsuario"> Ingresa tu Contraseña</label>
+            <label class="input-label" for="contraseñaUsuario">Ingresa tu Contraseña</label>
             <input type="password" id="contraseñaUsuario" name="password" required><br>
             <!-- Botón para enviar el formulario -->
             <input type="submit" value="Acceder">
         </form>
+        <!-- Mensaje de error -->
+        <div id="error-message" style="color: red; display: none;"></div>
     </div>
 </main>
-</body>
 <footer>
     <!-- Footer -->
 </footer>
 
-<!-- Script para manejar el evento click del botón -->
+<!-- Script para manejar el evento submit del formulario -->
 <script>
-    var nombreInput = document.getElementById('nombreUsuario');
-    var contraseñaInput= document.getElementById('contraseñaUsuario');
-    var registrarInput = document.getElementById('accederBtn');
-    
-    accederBtn.addEventListener('click',function(){
-        var nombre = nombreInput.value;
-        var contraseña = contraseñaInput.value;
-    
-        nombreInput.value = '';
-        contraseñaInput.value = '';
-        });
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+        // Obtener los valores de nombre de usuario y contraseña
+        var username = document.getElementById('nombreUsuario').value;
+        var password = document.getElementById('contraseñaUsuario').value;
+
+        // Realizar la solicitud al servidor para verificar las credenciales
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/conexion BD/BD.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = xhr.responseText;
+                if (response.trim() === 'success') {
+                    window.location.href = 'inicio.html'; // Redirigir al usuario a la página de inicio
+                } else {
+                    document.getElementById('error-message').style.display = 'block';
+                    document.getElementById('error-message').innerHTML = 'Usuario o contraseña incorrectos';
+                }
+            }
+        };
+        xhr.send('username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password));
+    });
 </script>
+</body>
 </html>
