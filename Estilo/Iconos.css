@@ -48,7 +48,7 @@ body {
 /* Estilos para la imagen del logotipo */
 .logo img {
     width: 43px;
-    border-radius: 50%;
+    border-radius: 10%;
 }
 
 /* Estilos para el texto del logotipo */

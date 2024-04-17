@@ -1,0 +1,23 @@
+Configuración de la Extensión mysqli en XAMPP:
+Localiza el archivo php.ini:
+
+En tu instalación de XAMPP, ve al directorio donde está instalado, generalmente en C:\xampp en sistemas Windows.
+Dentro de la carpeta de XAMPP, busca la carpeta php, luego la subcarpeta php.ini.
+Habilita la Extensión mysqli:
+
+Abre el archivo php.ini en un editor de texto como Notepad++ o Sublime Text.
+Busca la línea que contiene ;extension=mysqli (puede variar dependiendo de la versión).
+Elimina el punto y coma ; al principio de la línea para descomentarla y habilitar la extensión.
+Guarda los Cambios y Reinicia el Servidor:
+
+Guarda los cambios realizados en el archivo php.ini.
+Reinicia el servidor Apache de XAMPP para que los cambios surtan efecto.
+Con esto, la extensión mysqli debería estar habilitada en tu entorno XAMPP y podrás utilizarla en tus proyectos PHP.
+
+Descarga de Extensiones para Visual Studio Code:
+Visual Studio Code Marketplace:
+
+Abre Visual Studio Code.
+Ve a la pestaña de Extensiones (puedes hacerlo presionando Ctrl+Shift+X o seleccionando el ícono de extensiones en la barra lateral).
+En el campo de búsqueda, escribe el nombre de la extensión que deseas descargar, por ejemplo, "PHP Intelephense" o "PHP Server".
+Selecciona la extensión deseada de los resultados de búsqueda y haz clic en el botón "Install" (Instalar) para instalarla.
