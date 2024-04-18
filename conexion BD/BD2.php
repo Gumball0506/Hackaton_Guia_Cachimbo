@@ -1,29 +1,19 @@
 <?php
 // Establecer conexión a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "comunidad";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+include 'URL.php';
 
 // Verificar si la sesión está iniciada y el id del usuario está disponible
 session_start();
-if (!isset($_SESSION['id_usuario'])) {
+if (!isset($_SESSION['id'])) {
     die("Error: La sesión no está iniciada.");
 }
 
-$id_usuario = $_SESSION['id_usuario'];
+$id = $_SESSION['id'];
 
 // Consulta SQL para obtener los datos del perfil
-$sql = "SELECT * FROM perfil WHERE id_usuario = ?";
+$sql = "SELECT * FROM usuario WHERE id = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $id_usuario);
+$stmt->bind_param("i", $id);
 
 // Ejecutar la consulta SQL
 $stmt->execute();

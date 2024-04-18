@@ -156,18 +156,18 @@
                     url: '/conexion BD/BD2.php',
                     method: 'POST',
                     dataType: 'json',
+                    
                     success: function (data) {
                         // Verificar si se recibieron datos del perfil
                         if (data.success) {
                             // Mostrar los datos del perfil en el formulario
-                            $('#nombre').val(data.perfil.nombre);
-                            $('#apellido').val(data.perfil.apellido);
-                            $('#fecha_nacimiento').val(data.perfil.fecha_nacimiento);
-                            $('#codigo_estudiante').val(data.perfil.codigo_estudiante);
-                            $('#salario').val(data.perfil.facultad);
-                            $('#idioma').val(data.perfil.correo_electronico);
-                            $('#ciudad').val(data.perfil.ciudad);
-                            $('#profile-pic').attr('src', data.perfil.foto_url);
+                            $('nombre').val(data.usuario.nombre);
+                            $('apellido').val(data.usuario.apellido);
+                            $('fecha_nacimiento').val(data.usuario.fecha_nacimiento);
+                            $('codigo_estudiante').val(data.usuario.codigo_estudiante);
+                            $('facultad').val(data.usuario.facultad);
+                            $('correo_electronico').val(data.usuario.correo_electronico);
+                            $('profile-pic').attr('src', data.usuario.foto_url);
                         } else {
                             // Mostrar un mensaje de error si no se pudo obtener el perfil
                             console.log(data.message);
@@ -194,7 +194,7 @@
 
                 // Enviar los datos del formulario al servidor
                 $.ajax({
-                    url: '../conexion BD/BD2.php', // Cambia 'guardar_perfil.php' por el nombre de tu archivo PHP para guardar el perfil
+                    url: '/conexion BD/BD2.php', // Cambia 'guardar_perfil.php' por el nombre de tu archivo PHP para guardar el perfil
                     method: 'POST',
                     data: formData,
                     dataType: 'json',
