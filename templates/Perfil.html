@@ -152,8 +152,10 @@ $(document).ready(function () {
 
     // Función para obtener el perfil del usuario desde el servidor
     function obtenerPerfil() {
+        // Construir la URL relativa para el script PHP
+        
         $.ajax({
-            url: 'http://localhost:3000/conexion%20BD/BD2.php', // URL relativa al mismo directorio
+            url: 'http://localhost:3000/conexion%20BD/BD2.php',
             method: 'POST',
             dataType: 'json',
             success: function (data) {
@@ -182,12 +184,14 @@ $(document).ready(function () {
     $('#perfil').on('submit', function (e) {
         e.preventDefault(); // Evitar el envío del formulario por defecto
 
+        // Construir la URL relativa para el script PHP
+
         // Obtener los datos del formulario
         var formData = $(this).serialize();
 
         // Enviar los datos del formulario al servidor
         $.ajax({
-            url: 'http://localhost:3000/conexion%20BD/BD2.php', // URL relativa al mismo directorio
+            url: 'http://localhost:3000/conexion%20BD/BD2.php',
             method: 'POST',
             data: formData,
             dataType: 'json',
