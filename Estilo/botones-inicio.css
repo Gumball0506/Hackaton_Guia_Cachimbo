@@ -1,0 +1,17 @@
+.botones-acceso {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+.botones-acceso ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.botones-acceso ul li {
+    display: inline;
+    margin-right: 10px;
+}
