@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/facuydepo/Proyecto.hackaton/Estilo/style.css">
 </head>
 <body>
 
@@ -13,18 +13,19 @@
             <a href="#" class="facu">FACULTADES</a>
             <imput type="checkbox" id="menu"/>
             <label for="menu">
-              <img src="imgns/menu.png" class="menu-icono" alt="">
+              <img src="/facuydepo/Proyecto.hackaton/Imagenes/menu.png" class="menu-icono" alt="">
             </label>
             <nav class="navbar">
                 <ul>
                     <li><a href="#">Notificacion</a></li>
                     <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Inicio</a></li>
                 </ul>        
             </nav>
 
         <div class="header-content container">
             <h1> UNIVERSIDAD </h1>
-            <p>ubicada en Lima, Perú, es una institución emblemática de la educación superior en el país.
+            <p>Ubicada en Lima, Perú, es una institución emblemática de la educación superior en el país.
                 Fundada en 1963, lleva el nombre del destacado educador Federico Villarreal,
                 y desde entonces se ha comprometido con la formación integral de profesionales en diversas áreas del conocimiento.
             </p>        
@@ -32,11 +33,6 @@
    
     </header>
 
-    <section class="facult">
-        <img src="imgns/colegioanime.jpg" alt="">
-
-    </section>
-    
 </body>
     <div class="contenedor-acordeon">
         
@@ -134,6 +130,7 @@
         <input type="radio" name="acordeon" id="btn-acordeon3" class="btn-acordeon">
         <label for="btn-acordeon3">
             INGENIERÍAS Y CIENCIAS NATURALES
+        </label>
             <div class="container">
                 <div class="card">
                     <figure>
@@ -219,4 +216,21 @@
                         </div>
                     </div>
     </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('.btn-acordeon1');
+    
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const container = this.nextElementSibling;
+                if (this.checked) {
+                    container.style.maxHeight = container.scrollHeight + 'px';
+                } else {
+                    container.style.maxHeight = 0;
+                }
+            });
+        });
+    </script>
+    
+    
 </html>
