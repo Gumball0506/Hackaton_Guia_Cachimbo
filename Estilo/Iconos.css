@@ -42,12 +42,12 @@ body {
     color: #000;
     display: flex;
     align-items: center;
-    padding: 25px 10px 15px;
+    padding: 35px 60px 15px;
 }
 
 /* Estilos para la imagen del logotipo */
 .logo img {
-    width: 43px;
+    width: 64px;
     border-radius: 10%;
 }
 
