@@ -7,7 +7,6 @@ $dbname = "comunidad"; // Nombre de la base de datos
 
 // Conectamos a la base de datos
 $connection = mysqli_connect($host, $user, $pass, $dbname);
-
 // Verificamos la conexión a la base de datos
 if (!$connection) {
     die("No se ha podido conectar con el servidor: " . mysqli_connect_error());
@@ -24,18 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contraseña = $_POST["contraseña"];
 
     // Preparar la consulta SQL
-    $sql = "INSERT INTO usuario (nombre, dni, fecha_nacimiento, codigo_estudiante, facultad, correo_electronico, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO usuario (nombre , dni, fecha_nacimiento, codigo_estudiante, facultad, correo_electronico, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $connection->prepare($sql);
 
     if ($stmt) {
         // Enlazar parámetros
-        $stmt->bind_param("sssssss", $nombre, $dni, $fecha_nacimiento, $codigo_estudiante, $facultad, $correo_electronico, $contraseña);
+        $stmt->bind_param("sssssss", $nombre, $apellido, $dni, $fecha_nacimiento, $codigo_estudiante, $facultad, $correo_electronico, $contraseña);
         // Ejecutar la consulta
         $stmt->execute();
         // Verificar si se insertaron los datos correctamente
         if ($stmt->affected_rows > 0) {
             // Redirigir al usuario a la página principal si la inserción es exitosa
-            header("Location: /Proyecto/templates/inicio.html");
+            header("Location: /templates/inicio.html");
             exit(); // Terminar el script después de redirigir
         } else {
             die("Error al registrar el usuario: " . $stmt->error); // Error en el registro
