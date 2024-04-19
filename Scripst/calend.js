@@ -214,7 +214,7 @@ function gotoDate() {
 //function get active day day name and date and update eventday eventdate
 function getActiveDay(date) {
   const day = new Date(year, month, date);
-  const dayName = day.toString().split(" ")[0];
+  const dayName = getDayName(day.getDay());
   eventDay.innerHTML = dayName;
   eventDate.innerHTML = date + " " + months[month] + " " + year;
 }
@@ -270,26 +270,6 @@ addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
 });
 
-function defineProperty() {
-  var osccred = document.createElement("div");
-  osccred.innerHTML =
-    "A Project By <a href='https://www.youtube.com/channel/UCiUtBDVaSmMGKxg1HYeK-BQ' target=_blank>Open Source Coding</a>";
-  osccred.style.position = "absolute";
-  osccred.style.bottom = "0";
-  osccred.style.right = "0";
-  osccred.style.fontSize = "10px";
-  osccred.style.color = "#ccc";
-  osccred.style.fontFamily = "sans-serif";
-  osccred.style.padding = "5px";
-  osccred.style.background = "#fff";
-  osccred.style.borderTopLeftRadius = "5px";
-  osccred.style.borderBottomRightRadius = "5px";
-  osccred.style.boxShadow = "0 0 5px #ccc";
-  document.body.appendChild(osccred);
-}
-
-defineProperty();
-
 //allow only time in eventtime from and to
 addEventFrom.addEventListener("input", (e) => {
   addEventFrom.value = addEventFrom.value.replace(/[^0-9:]/g, "");
@@ -317,7 +297,7 @@ addEventSubmit.addEventListener("click", () => {
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
   if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
-    alert("Please fill all the fields");
+    alert("Porfavor llene todos los campos");
     return;
   }
 
@@ -332,7 +312,7 @@ addEventSubmit.addEventListener("click", () => {
     timeToArr[0] > 23 ||
     timeToArr[1] > 59
   ) {
-    alert("Invalid Time Format");
+    alert("Formato de tiempo invalido");
     return;
   }
 
@@ -403,7 +383,7 @@ addEventSubmit.addEventListener("click", () => {
 //function to delete event when clicked on event
 eventsContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("event")) {
-    if (confirm("Are you sure you want to delete this event?")) {
+    if (confirm("¿Estas seguro de que quieres eliminar este evento?")) {
       const eventTitle = e.target.children[0].children[1].innerHTML;
       eventsArr.forEach((event) => {
         if (
@@ -485,3 +465,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Llama a la función para verificar eventos y mostrar notificaciones
   checkEventsAndNotify();
 });
+function getDayName(day) {
+  const daysOfWeek = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+  return daysOfWeek[day];
+}
