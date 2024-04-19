@@ -104,7 +104,7 @@
         <div class="row">
             <div class="col-md-4 text-center">
                 <!-- Foto de perfil -->
-                <img id="profile-pic" src="path/to/default-profile-pic.jpg" alt="Foto de perfil" class="profile-pic">
+                <img id="profile-pic" src="../path/to/default-profile-pic.jpg" alt="Foto de perfil" class="profile-pic">
                 <!-- Botón para subir foto de perfil -->
                 <label for="imagefile" class="btn-upload"><i class="fas fa-upload"></i> Subir foto</label>
                 <input type="file" name="imagefile" id="imagefile" class="file-input">
@@ -146,68 +146,62 @@
     <!-- Incluye tus archivos JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            // Cuando se carga la página, obtener el perfil del usuario
-            obtenerPerfil();
+$(document).ready(function () {
+    // Cuando se carga la página, obtener el perfil del usuario
+    obtenerPerfil();
 
-            // Función para obtener el perfil del usuario desde el servidor
-            function obtenerPerfil() {
-                $.ajax({
-                    url: '/conexion BD/BD2.php',
-                    method: 'POST',
-                    dataType: 'json',
-                    
-                    success: function (data) {
-                        // Verificar si se recibieron datos del perfil
-                        if (data.success) {
-                            // Mostrar los datos del perfil en el formulario
-                            $('nombre').val(data.usuario.nombre);
-                            $('apellido').val(data.usuario.apellido);
-                            $('fecha_nacimiento').val(data.usuario.fecha_nacimiento);
-                            $('codigo_estudiante').val(data.usuario.codigo_estudiante);
-                            $('facultad').val(data.usuario.facultad);
-                            $('correo_electronico').val(data.usuario.correo_electronico);
-                            $('profile-pic').attr('src', data.usuario.foto_url);
-                        } else {
-                            // Mostrar un mensaje de error si no se pudo obtener el perfil
-                            console.log(data.message);
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('Error al obtener el perfil:', error);
-                    }
-                });
+    // Función para obtener el perfil del usuario desde el servidor
+    function obtenerPerfil() {
+        $.ajax({
+            url: 'http://localhost:3000/conexion%20BD/BD2.php', // URL relativa al mismo directorio
+            method: 'POST',
+            dataType: 'json',
+            success: function (data) {
+                // Verificar si se recibieron datos del perfil
+                if (data.success) {
+                    // Mostrar los datos del perfil en el formulario
+                    $('#nombre').val(data.usuario.nombre);
+                    $('#apellido').val(data.usuario.apellido);
+                    $('#fecha_nacimiento').val(data.usuario.fecha_nacimiento);
+                    $('#codigo_estudiante').val(data.usuario.codigo_estudiante);
+                    $('#facultad').val(data.usuario.facultad);
+                    $('#correo_electronico').val(data.usuario.correo_electronico);
+                    $('#profile-pic').attr('src', data.usuario.foto_url);
+                } else {
+                    // Mostrar un mensaje de error si no se pudo obtener el perfil
+                    console.log(data.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al obtener el perfil:', error);
             }
-
-            // Mostrar nombre del archivo seleccionado al subir una foto
-            $('#imagefile').on('change', function () {
-                var filename = $(this).val().split('\\').pop();
-                $(this).siblings('.form-control').addClass('selected').val(filename);
-            });
-
-            // Manejar el envío del formulario de perfil
-            $('#perfil').on('submit', function (e) {
-                e.preventDefault(); // Evitar el envío del formulario por defecto
-
-                // Obtener los datos del formulario
-                var formData = $(this).serialize();
-
-                // Enviar los datos del formulario al servidor
-                $.ajax({
-                    url: '/conexion BD/BD2.php', // Cambia 'guardar_perfil.php' por el nombre de tu archivo PHP para guardar el perfil
-                    method: 'POST',
-                    data: formData,
-                    dataType: 'json',
-                    success: function (data) {
-                        // Mostrar un mensaje de éxito o error
-                        $('#resultados_ajax').text(data.message);
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('Error al guardar el perfil:', error);
-                    }
-                });
-            });
         });
+    }
+
+    // Manejar el envío del formulario de perfil
+    $('#perfil').on('submit', function (e) {
+        e.preventDefault(); // Evitar el envío del formulario por defecto
+
+        // Obtener los datos del formulario
+        var formData = $(this).serialize();
+
+        // Enviar los datos del formulario al servidor
+        $.ajax({
+            url: 'http://localhost:3000/conexion%20BD/BD2.php', // URL relativa al mismo directorio
+            method: 'POST',
+            data: formData,
+            dataType: 'json',
+            success: function (data) {
+                // Mostrar un mensaje de éxito o error
+                $('#resultados_ajax').text(data.message);
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al guardar el perfil:', error);
+            }
+        });
+    });
+});
+
     </script>
 </body>
 </html>
