@@ -7,7 +7,6 @@ $dbname = "comunidad"; // Nombre de la base de datos
 
 // Conectamos a la base de datos
 $connection = mysqli_connect($host, $user, $pass, $dbname);
-
 // Verificamos la conexión a la base de datos
 if (!$connection) {
     die("No se ha podido conectar con el servidor: " . mysqli_connect_error());
