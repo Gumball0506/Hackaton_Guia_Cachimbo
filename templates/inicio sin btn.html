@@ -56,7 +56,7 @@
             <h4>Cuenta</h4>
             <li>
                 <i class="fas fa-user-circle"></i>
-                <a href="/templates/Perfil.html">Perfil</a>
+                <a href="/templates/Perfil.php">Perfil</a>
             </li>
             <li>
                 <i class="fas fa-bell"></i>
@@ -69,20 +69,39 @@
         </ul>
     </aside>
 
-    <!-- Secuencia de imágenes -->
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="/Imagenes/capi.png" alt="imagen1">
+        <!-- Secuencia de imágenes -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="/Imagenes/capi.png" alt="imagen1">
+            </div>
+            <div class="mySlides fade">
+                <img src="/Imagenes/Willy.png" alt="imagen2">
+            </div>
+            <div class="mySlides fade">
+                <img src="/Imagenes/willypavo.png" alt="imagen3">
+            </div>
+            <div class="mySlides fade">
+                <img src="/Imagenes/willy-dylan.jpeg" alt="imagen4">
+            </div>
         </div>
-        <div class="mySlides fade">
-            <img src="/Imagenes/Willy.png" alt="imagen2">
-        </div>
-        <div class="mySlides fade">
-            <img src="/Imagenes/willypavo.png" alt="imagen3">
-        </div>
-        <div class="mySlides fade">
-            <img src="/Imagenes/willy-dylan.jpeg" alt="imagen3">
-        </div>
+    
+        <!-- JavaScript para la presentación de diapositivas -->
+        <script>
+            var slideIndex = 0;
+            showSlides();
+    
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none"; // Ocultar todas las diapositivas
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                slides[slideIndex - 1].style.display = "block"; // Mostrar la diapositiva actual
+                setTimeout(showSlides, 30000); // Cambia este valor para ajustar el tiempo entre diapositivas
+            }
+        </script>
     </div>
             <!-- Sección para las notificaciones (incluido el video de YouTube) -->
             <div class="video-container">
