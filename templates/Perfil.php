@@ -1,4 +1,7 @@
 <?php
+session_start();
+include('logeado.php'); //Archivo verifica que el usuario que intenta acceder a la URL está logueado
+
 // Establecer conexión a la base de datos
 $servername = "localhost";
 $username = "root";
@@ -7,14 +10,34 @@ $dbname = "comunidad";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
-session_start();
-if (!isset($_SESSION['id']) and $_SESSION['id'] != 1) {
-    header("location: ./login.html");
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['id'])) {
+    // Redirigir al formulario de inicio de sesión si no ha iniciado sesión
+    header("location: login.html");
     exit;
 }
 
-$query_empresa = mysqli_query($conn, "select * from usuario where id=34");
-$row = mysqli_fetch_array($query_empresa);
+// Obtener el ID del usuario de la sesión
+$user_id = $_SESSION['id'];
+
+// Consultar la base de datos para obtener los datos del usuario
+$query = "SELECT * FROM usuario WHERE id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Verificar si se encontraron los datos del usuario
+if ($result->num_rows > 0) {
+    // Obtener los datos del usuario
+    $row = $result->fetch_assoc();
+    // Mostrar los datos del usuario en la página de perfil
+} else {
+    // Si no se encontraron datos del usuario, mostrar un mensaje de error
+    exit("Error: Usuario no encontrado");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

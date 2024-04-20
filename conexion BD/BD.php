@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Ejecutamos la consulta SQL para buscar al usuario en la base de datos
-    $consulta = "SELECT * FROM usuario WHERE nombre = ? AND contraseña = ?";
+    $consulta = "SELECT id FROM usuario WHERE nombre = ? AND contraseña = ?";
     $stmt = mysqli_stmt_init($connection);
 
     if (mysqli_stmt_prepare($stmt, $consulta)) {
@@ -26,7 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($user) {
-        // Si las credenciales son válidas, retorna un éxito
+        // Si las credenciales son válidas, iniciar sesión y almacenar el ID del usuario en la sesión
+        session_start();
+        $_SESSION['id'] = $user['id'];
         echo "success";
     } else {
         // Si las credenciales son inválidas, retorna un mensaje de error
