@@ -6,67 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talleres | El Rincon del Cachimbo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../Estilo/Talleres.css">
-    <link rel="stylesheet" href="../Estilo/Iconos.css">
+    
 </head>
 <body>
-    <header class="cabecera">
-        <h1>Talleres</h1>
-    </header>
-    <aside class="sidebar">
-        <div class="logo">
-            <img src="../Imagenes/logo.png" alt="logo">
-            <h2>El Ricón del cachimbo</h2>
+    <!--aca comienza la barra de navegacion horizontal-->
+    <header class="header">
+    <div class="menu__wrapper">
+        <div class="menu__bar">
+            <a href="#" title="Home" aria-label="home" class="logo">
+                <img src="/Imagenes/logokchimbo64.ico" alt="logo">
+            </a>
+            <nav>
+                <ul class="navigation hide">
+                    <li>
+                        <a href="../templates/inicio.html" title="Inicio">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/templates/calendario.html" title="Calendario">
+                            Calendario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/templates/facultades.html" title="Facultades">
+                            Facultades
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/templates/Deporte.html" title="Deportes">
+                            Deportes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/templates/seminario.html" title="Seminarios">
+                            Seminarios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/templates/eventos.html" title="Eventos">
+                            Eventos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/templates/Conferencias.html" title="Conferencia">
+                            Conferencia
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    <!--Aca comienza el titulo y las cards-->
+    
+    <h1 class="cabecera">
+        Talleres
+    </h1>
+
+    <main>
+        <div class="card">
+            <img src="../Imagenes/willy-dylan.jpeg" alt="img1">
+                <div class="info">
+                    <h1>ZzZ</h1>
+                    <p>Momento de ir a dormir</p>
+                    <a href="https://www.youtube.com/watch?v=E2t9jUyra7s" target="_blank" class="btn">Saber Más</a>
+                </div>
         </div>
-        <ul class="links">
-            <h4>Menu Principal</h4>
-            <li>
-                <i class="fas fa-home"></i> <!-- Se corrigió la clase de los iconos -->
-                <a href="./inicio.html">Inicio</a>
-            </li>
-            <li>
-                <i class="far fa-calendar"></i>
-                <a href="#">Calendario</a>
-            </li>
-            <h4>Universidad</h4>
-            <li>
-                <i class="fas fa-graduation-cap"></i>
-                <a href="#">Facultades</a>
-            </li>
-            <li>
-                <i class="fas fa-futbol"></i>
-                <a href="#">Deportes</a>
-            </li>
-            <li>
-                <i class="fas fa-users"></i></i>
-                <a href="./seminario.html">Seminarios</a>
-            </li>
-            <li>
-                <i class="far fa-calendar-alt"></i>
-                <a href="#">Eventos</a>
-            </li>
-            <li>
-                <i class="fas fa-comments"></i>
-                <a href="./Conferencias.html">Conferencia</a>
-            </li>
-            <li>
-                <i class="fas fa-tools"></i>
-                <a href="#">Talleres</a>
-            </li>
-            <h4>Cuenta</h4>
-            <li>
-                <i class="fas fa-user-circle"></i>
-                <a href="/templates/Perfil.html">Perfil</a>
-            </li>
-            <li>
-                <i class="fas fa-bell"></i>
-                <a href="/templates/Notificaciones.html">Notificaciones</a>
-            </li>
-            <li class="logout-link">
-                <i class="fas fa-sign-out-alt"></i>
-                <a href="/templates/inicio.html">Cerrar Sesión</a>
-            </li>
-        </ul>
-    </aside>
+        <div class="card">
+            <img src="../Imagenes/Willy.png" alt="img2">
+                <div class="info">
+                    <h1>Willy pirata</h1>
+                    <p>wtf? willy pirata?</p>
+                    <a href="https://www.youtube.com/watch?v=PPyCavz8nMY" target="_blank" class="btn">Saber Mas</a>
+                </div>
+        </div>
+        <div class="card">
+            <img src="../Imagenes/mono morado.png" alt="img3">
+                <div class="info">
+                    <h1>Mono morado</h1>
+                    <p>Este mono en los 2000 fue potente...</p>
+                    <a href="https://www.youtube.com/watch?v=abp6sZ2T6tA" target="_blank" class="btn">Saber Más</a>
+                </div>
+        </div>
+    </main>
 </body>
 </html>

@@ -1,7 +1,245 @@
-*{
-    background-color: rgb(176, 84, 84);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600');
+
+/* estilo para las cartas de info*/
+
+*, *::before, *::after{
+    /*background-color: rgb(222, 77, 77);*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
-.cabecera{
+.cabecera{ /* lo borre por el momento, estoy probando la navbar horizontal*/
     text-align: center;
     font-size: 50px;
+    color: #fff;
 }
+img{
+    max-width: 100%;
+}
+
+body{
+    background-color: var(--background);
+}
+
+body .main{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px 40px;
+}
+.card{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: min(100%, 350px);
+    height: 500px;
+    padding: 30px 25px;
+    background: #fff;
+    box-shadow: 0px 7px 10px rgba(0,0,0, 0.5);
+    transition: all 0.5s ease;
+    border-radius: 45px;
+}
+.card:hover{
+    transform: translateY(20px);
+}
+.card:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(208, 195, 195, 0.5), rgb(227, 16, 16));
+    transition: all 0.5s;
+    opacity: 0;
+    border-radius: 40px;
+}
+.card:hover:after{
+    opacity: 1;
+}
+.card > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 40px;
+}
+.card .info{
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s;
+}
+.card:hover .info{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.card .info h1{
+    font-size: 1.4rem;
+    margin:0;
+}
+.card .info p{
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin: 10px 0 25px;
+    line-height: 130%;
+}
+.card .info .btn{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #4b5563;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+.card .info .btn:hover{
+    box-shadow: 0px 7px 10px rgba(0,0,0, 0.5);
+    background-color: #4b5563;
+    color:#fff;
+}
+/*Estilo para la barra de navegacion horizontal*/
+:root {
+    --primary: #3ECF8E;
+    --primary-dark: #37996B;
+    --primary-darker: #317F5A;
+    --text: #F9F9F9;
+    --background: #1C1C1C;
+    --secondary: #2E2E2E;
+    --gray-border: #3E3E3E;
+    --gray-border-hover: #505050;
+    --gray-menu-button: #7E7E7E;
+    --gray-menu-button-hover: #232323;
+    --navbar-height: 4rem;
+    --gray-text-hover: #8F8F8F;
+    --gray-icon: #A0A0A0;
+}
+
+.header {
+    width: 100vw;
+    border-bottom: 1px solid var(--gray-border);
+    height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu__wrapper {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    z-index: 2;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 60rem;
+    padding: 0px 1rem;
+    align-items: center;
+}
+
+.menu__bar {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 1.5rem;
+}
+
+.navigation {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--background);
+}
+
+.navigation>li {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    min-height: 2.25rem;
+}
+
+.navigation>li>a {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navigation >li >a:hover {
+    color: var(--primary);
+}
+
+.navigation >li> button {
+    color: var(--text);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    margin-right: -0.25rem;
+    align-items: center;
+    min-height: 2.25rem;
+    font-size: 14px;
+    gap: 0.25rem;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    flex-wrap: nowrap;
+    padding: 0.25rem 0.7rem;
+    white-space: nowrap;
+    background: none;
+    display: flex;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation>li>button>svg {
+    margin-top: 2px;
+    fill: var(--text);
+    transition: all 0.2s ease-in-out;
+}
+
+
+.navigation>li:hover>button svg {
+    fill: var(--primary);
+    transform: rotate(0.5turn);
+}
+
+.navigation>li:hover>button {
+    color: var(--primary);
+}
+
+.navigation>li:hover .dropdown {
+    display: block;
+}
+
+
+
+
+
+
