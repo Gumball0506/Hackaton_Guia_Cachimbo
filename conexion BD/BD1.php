@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt) {
         // Enlazar parámetros
-        $stmt->bind_param("sssssss", $nombre, $apellido, $dni, $fecha_nacimiento, $codigo_estudiante, $facultad, $correo_electronico, $contraseña);
+        $stmt->bind_param("sssssss", $nombre, $dni, $fecha_nacimiento, $codigo_estudiante, $facultad, $correo_electronico, $contraseña);
         // Ejecutar la consulta
         $stmt->execute();
         // Verificar si se insertaron los datos correctamente
