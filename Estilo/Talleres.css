@@ -9,10 +9,12 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-.cabecera{ /* lo borre por el momento, estoy probando la navbar horizontal*/
+.cabecera{
     text-align: center;
     font-size: 50px;
     color: #fff;
+    margin-top: calc(var(--navbar-height) + 10px); /* Ajustar según sea necesario */
+    z-index: 1; /* Asegurar que esté por encima de la barra de navegación */
 }
 img{
     max-width: 100%;
@@ -137,11 +139,16 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    background-color: var(--background);
+    z-index: 3;
 }
+
 
 .menu__wrapper {
     display: flex;
-    position: fixed;
+    z-index: 2;
     justify-content: space-between;
     z-index: 2;
     gap: 1.5rem;
