@@ -113,7 +113,7 @@ if ($result->num_rows > 0) {
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Archivo JS personalizado -->
-    <script src="footer.js"></script>
+    <script src="libraries-loader.js"></script>
     <script src="js/bootstrap-filestyle.js"></script>
     <script>
         // Función para enviar el formulario con AJAX
