@@ -100,7 +100,7 @@
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var response = xhr.responseText;
                 if (response.trim() === 'success') {
-                    window.location.href = 'inicio.html'; // Redirigir al usuario a la página de inicio
+                    window.location.href = 'inicio sin btn.html'; // Redirigir al usuario a la página de inicio
                 } else {
                     document.getElementById('error-message').style.display = 'block';
                     document.getElementById('error-message').innerHTML = 'Usuario o contraseña incorrectos';

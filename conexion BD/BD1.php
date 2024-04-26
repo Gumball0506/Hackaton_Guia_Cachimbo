@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verificar si se insertaron los datos correctamente
         if ($stmt->affected_rows > 0) {
             // Redirigir al usuario a la página principal si la inserción es exitosa
-            header("Location: /templates/inicio.html");
+            header("Location:http://localhost:3000/templates/inicio.html");
             exit(); // Terminar el script después de redirigir
         } else {
             die("Error al registrar el usuario: " . $stmt->error); // Error en el registro

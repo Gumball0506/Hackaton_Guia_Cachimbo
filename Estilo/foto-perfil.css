@@ -1,0 +1,19 @@
+.profile-picture-container {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: center; /* Para alinear en el lado izquierdo */
+    align-items: center; /* Para centrar horizontalmente */
+    height: 70vh; /* Altura del contenedor, ajustada al 100% del viewport */
+}
+
+.profile-picture {
+    width: 300px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto; /* Mantener la proporción de aspecto */
+    border: 5px solid #fd821c; /* Borde para la imagen */
+    border-radius: 10%; /* Para hacer la imagen circular */
+    padding: 1px; /* Espacio alrededor de la imagen */
+}
+
+.custom-button {
+    margin-top: 20px; /* Espacio superior entre la imagen y el botón */
+}
