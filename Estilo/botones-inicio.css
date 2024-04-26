@@ -1,8 +1,8 @@
+/* Estilos para los botones de acceso */
 .botones-acceso {
     position: fixed;
-    top: 0;
-    right: 0;
-    margin: 20px;
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
 }
 
 .botones-acceso ul {
@@ -12,6 +12,43 @@
 }
 
 .botones-acceso ul li {
-    display: inline;
+    display: inline; /* Mostrar los elementos de la lista en línea */
     margin-right: 10px;
 }
+
+/* Estilos para los botones de acceso */
+.botones-acceso a {
+    padding: 6px 12px; /* Se redujo el relleno */
+    border: 2px solid #000000; /* Se redujo el grosor del borde */
+    border-radius: 16px; /* Se redujo el radio de borde */
+    background-color: transparent;
+    color: #000000;
+    font-size: 14px; /* Se redujo el tamaño de la fuente */
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estilos para los botones de acceso al pasar el ratón */
+.botones-acceso a:hover {
+    background-color: #000;
+    color: #ffffff;
+}
+
+/* Estilos para los iconos de acceso */
+.botones-acceso a i {
+    margin-right: 6px; /* Se redujo el margen */
+    border: 1px solid #000000; /* Se redujo el grosor del borde */
+    border-radius: 50%; /* Bordes redondeados para formar un círculo */
+    padding: 2px; /* Se redujo el relleno */
+    font-size: 16px; /* Se redujo el tamaño de la fuente */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estilos para los iconos de acceso al pasar el ratón */
+.botones-acceso a:hover i {
+    background-color: #fff;
+    color: #000;
+}
+

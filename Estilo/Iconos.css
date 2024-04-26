@@ -1,116 +1,139 @@
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600');
 
-    /* Estilos base para todos los elementos del documento */
-    * {
-        margin: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-    }
+/* Estilos base para todos los elementos del documento */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 
-    /* Estilos para el cuerpo del documento */
-    body {
-        height: 100vh;
-        width: 100%;
-        background-image: url("");
-        background-position: center;
-        background-size: cover;
-        background-color: rgba(255, 255, 255, 0.5); /* Ajusta el valor alfa aquí */
-    }
-    
-    
+/* Estilos para el cuerpo del documento */
+body {
+    height: 100vh;
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,115,0,1) 100%);
+}
 
-    /* Estilos para la barra lateral */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 110%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        /*background: rgba(255, 255, 255, 0.2);*/
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(10px);
-        /*border-right: 1px solid rgba(255, 255, 255, 0.7);*/
-        transition: width 0.3s ease;
-    }
+/* Estilos para la barra lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: width 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
+}
 
-    /* Ancho de la barra lateral al pasar el ratón */
-    .sidebar:hover {
-        width: 180px;
-    }
+/* Ancho de la barra lateral al pasar el ratón */
+.sidebar:hover {
+    width: 180px;
+}
 
-    /* Estilos para el logotipo dentro de la barra lateral */
-    .sidebar .logo {
-        color: #000;
-        display: flex;
-        align-items: center;
-        padding: 35px 60px 15px;
-    }
+/* Estilos para el logotipo dentro de la barra lateral */
+.sidebar .logo {
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 35px 60px 15px;
+}
 
-    /* Estilos para la imagen del logotipo */
-    .logo img {
-        width: 64px;
-        border-radius: 10%;
-    }
+/* Estilos para la imagen del logotipo */
+.logo img {
+    width: 64px;
+    border-radius: 10%;
+}
 
-    /* Estilos para el texto del logotipo */
-    .logo h2 {
-        font-size: 1.15rem;
-        font-weight: 600;
-        margin-left: 15px;
-        display: none;
-    }
+/* Estilos para el texto del logotipo */
+.logo h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-left: 15px;
+    display: none;
+}
 
-    /* Mostrar el texto del logotipo al pasar el ratón */
-    .sidebar:hover .logo h2 {
-        display: block;
-    }
+/* Mostrar el texto del logotipo al pasar el ratón */
+.sidebar:hover .logo h2 {
+    display: block;
+}
 
-    /* Estilos para los enlaces dentro de la barra lateral */
-    .sidebar .links {
-        list-style: none;
-        margin-top: 10px;
-        overflow-y: auto;
-        scrollbar-width: none;
-        height: calc(100% - 200px);
-    }
+/* Estilos para los enlaces dentro de la barra lateral */
+.sidebar .links {
+    list-style: none;
+    margin-top: 10px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    height: calc(100% - 200px);
+}
 
-    /* Ocultar la barra de desplazamiento */
-    .sidebar .links::-webkit-scrollbar {
-        display: none;
-    }
+/* Ocultar la barra de desplazamiento */
+.sidebar .links::-webkit-scrollbar {
+    display: none;
+}
 
-    /* Estilos para los elementos de la lista de enlaces */
-    .links li {
-        display: flex;
-        border-radius: 4px;
-        align-items: center;
-        margin-bottom: 25px; /* Agrega un margen inferior para separar los elementos */
-    }
+/* Estilos para los elementos de la lista de enlaces */
+.links li {
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+    margin-bottom: 25px; /* Agrega un margen inferior para separar los elementos */
+}
 
-    /* Estilos para los iconos */
-    .links li .material-icons-outlined {
-        margin-right: 25px; /* Agrega un margen derecho para separar los iconos de los textos */
-    }
+/* Estilos para los iconos */
+.links li .material-icons-outlined {
+    margin-right: 25px; /* Agrega un margen derecho para separar los iconos de los textos */
+}
 
 
-    /* Estilos para los enlaces */
-    .links li a {
-        padding: 10px;
-        color: #000;
-        display: none;
-        font-weight: 500;
-        white-space: nowrap;
-        text-decoration: none;
-    }
+/* Estilos para los enlaces */
+.links li a {
+    padding: 10px;
+    color: #000;
+    display: none;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+}
 
-    /* Mostrar los enlaces al pasar el ratón */
-    .sidebar:hover .links li a {
-        display: block;
-    }
+/* Mostrar los enlaces al pasar el ratón */
+.sidebar:hover .links li a {
+    display: block;
+}
 
-    /* Estilos para el enlace de cierre de sesión */
-    .links .logout-link {
-        margin-top: 20px;
-    }
+/* Estilos para el enlace de cierre de sesión */
+.links .logout-link {
+    margin-top: 20px;
+}
+/* Estilos para los elementos de la lista de enlaces al pasar el mouse */
+/* Estilos para los elementos de la lista de enlaces al pasar el mouse */
+.links li:hover {
+    background-color: #000; /* Cambia el color de fondo al pasar el mouse */
+    transition: background-color 0.3s ease; /* Agrega una transición suave */
+}
+
+/* Estilos para el texto de los enlaces al pasar el mouse */
+.links li:hover a {
+    color: #fff; /* Cambia el color del texto al pasar el mouse */
+    transition: color 0.3s ease; /* Agrega una transición suave */
+}
+
+/* Estilos para los iconos de los enlaces al pasar el mouse */
+.links li:hover i {
+    color: #fff; /* Cambia el color del icono al pasar el mouse */
+    transition: color 0.3s ease; /* Agrega una transición suave */
+}
+
+/* Estilos para el texto de los enlaces */
+.links li a {
+    padding: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Agrega una transición suave */
+}

@@ -106,7 +106,7 @@
     max-width: 800px; /* Ancho máximo para las imágenes */
     margin: 30vh 15%; /* Centrar verticalmente y horizontalmente */
     overflow: hidden; /* Ocultar cualquier desbordamiento */
-    border: 5px solid #ddab21; /* Borde más delgado */
+    border: 5px solid #000000; /* Borde más delgado */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
@@ -125,13 +125,13 @@
 /* Estilos para la sección de video */
 .video-container {
     width: 40%; /* Ancho para el video */
-    max-width: 500px; /* Ancho máximo para el video */
-    margin: 30vh auto; /* Centrar verticalmente y horizontalmente */
+    max-width: 1000px; /* Ancho máximo para el video */
+    margin: 32vh auto; /* Centrar verticalmente y horizontalmente */
     position: absolute;
-    right: 5%; /* Alinear a la derecha */
+    right: 1%; /* Alinear a la derecha */
     padding-bottom: 22.25%; /* Proporción 16:9 para el video */
     overflow: hidden; /* Ocultar cualquier desbordamiento */
-    border: 5px solid #ddab21; /* Borde más delgado */
+    border: 5px solid #000000; /* Borde más delgado */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
