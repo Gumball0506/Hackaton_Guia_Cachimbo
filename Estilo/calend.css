@@ -31,10 +31,10 @@ body {
 }
 .container {
   position: relative;
-  width: 1200px;
-  min-height: 850px;
+  width: 100%;
+  min-height: 600px;
   margin: 0 auto;
-  padding: 5px;
+  padding: 10px;
   color: #fff;
   display: flex;
 
@@ -43,7 +43,7 @@ body {
 }
 .left {
   width: 60%;
-  padding: 20px;
+  padding: 10px;
 }
 .calendar {
   position: relative;
@@ -76,13 +76,13 @@ body {
   background-color: rgb(153, 153, 153);
 }
 .calendar .month {
-  width: 100%;
+  width: 100px;
   height: 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   text-transform: capitalize;
 }
@@ -96,12 +96,12 @@ body {
 }
 .calendar .weekdays {
   width: 100%;
-  height: 100px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
   text-transform: capitalize;
 }
@@ -118,13 +118,13 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 20px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 20px;
 }
 .calendar .days .day {
   width: 14.28%;
-  height: 90px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -255,7 +255,7 @@ body {
   gap: 10px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 10px;
   padding-left: 70px;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -495,14 +495,14 @@ body {
   .container .right {
     width: 100%;
     height: 100%;
-    padding: 20px 0;
+    padding: 10px;
   }
   .calendar::before,
   .calendar::after {
     top: 100%;
     left: 50%;
     width: 97%;
-    height: 12px;
+    height: 8px;
     border-radius: 0 0 5px 5px;
     transform: translateX(-50%);
   }
