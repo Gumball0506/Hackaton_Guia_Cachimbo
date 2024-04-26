@@ -1,73 +1,196 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Sedan:ital@0;1&display=swap');
 
-*{
-    margin: 0%;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-} 
-body{
-font-family: "Oswald", sans-serif;
-}
-
-.container {
-    max-width: 1200px;
-    margin:0 auto;
-
-}
-.header {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(imgns/d8szdbj-2883ee63-75e1-497d-b7b5-826e6073cb91.png);
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 70vh;
+body {
+    
+    min-height: 100vh;
     display: flex;
+    justify-content: center;
     align-items: center;
+    background-color: blueviolet;
+    background-image: linear-gradient(225deg, blueviolet 0%, #cc2426 33%, #4d5967 66%, #342f2f 100%);
+    font-family: sans-serif;
+
+
 }
 
-.menu {
+.cartas {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+  
+}
+
+.facu2 {
+    width: 300px;
+    height: 450px;
+    padding: 2rem 1rem;
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+    transition: 0.5s ease-in-out;
+    margin: 20px;
+}
+
+.facu2:hover {
+    transform: translateY(20px);
+}
+
+.facu2::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,176,155,0.5), rgba(150,201, 61,1));
+    z-index: 2;
+    transition: 0.5s all;
+    opacity: 1;
+}
+
+.facu2:hover::before {
+    opacity: 1;
+}
+
+.facu2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+}
+
+.facu2 .info {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    opacity: 1;
+    transform: translateY(30px);
+    transition: 0.5s all;
+}
+
+.facu2:hover .info {
+    opacity: 1;
+    transform: translateY(0px);
+
+}
+
+.facu2 .info h1 {
+    margin: 0;
+}
+
+.facu2 .info p {
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.facu2 .info .btn-1 {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.facultades-acordeon {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.facultades-acordeon h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+.acordeon {
+    background: #fff;
+}
+
+.acordeon label {
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+    background: cadetblue;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: all 300ms ease;
+}
+
+.acordeon label:hover {
+    background: #2e2e2e;
+
+}
+
+.acordeon .cienciasdelaempresa-acordeon {
+    padding: 0px;
+    margin: 0px 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 300ms ease;
+}
+
+.btn-acordeon:checked ~ .cienciasdelaempresa-acordeon {
+    max-height: 600px;
+    padding: 15px 0px;
+
+}
+
+.btn-acordeon{
+    display: none;
+}
+   
+.arriba-facu {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 63px;
+    background: black;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
 }
 
-.facu {
-    color: #fffdfc;
-    font-size: 25px;
-    font-weight: 700;
+.link {
+    display: flex;
+    margin-right: 30px;
 }
 
-.menu .navbar ul li {
-    position: relative;
-    float: left;
+.deportes {
+    margin-left: 30px;
+}
+
+.deportes h3{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 30px;
+
 
 }
 
-.menu .navbar ul li {
-    font-size: 18xp;
-    padding: 20px;
-    color: #fffdfc;
+.link a {
     display: block;
-    font-weight: 500;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+
 }
 
-#menu {
-    display: contents;  
+.link:hover a{
+    color: bisque;
 }
-
-.menu-icono {
-    width: 25px;
-}
-
-.menu label {
-    cursor: pointer;
-    display: none;
-}
-
-
-
