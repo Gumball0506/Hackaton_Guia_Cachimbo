@@ -6,74 +6,57 @@
     <title>Calendario y Barra Lateral</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="/Estilo/calend.css">
-    <link rel="stylesheet" href="../Estilo/Iconos.css">
+    <link rel="stylesheet" href="../Estilo/Talleres.css">
     <style>
-        /* Agrega aquí tus estilos personalizados si es necesario */
     </style>
 </head>
 <body>
-    <!-- Botones de acceso y registro en la esquina superior derecha -->
-    <div class="botones-acceso">
-        <ul>
-            <li><a href="../templates/login.html">Acceder</a></li>
-            <li><a href="../templates/registro.html">Crear Cuenta</a></li>
-        </ul>
-    </div>    
-    <aside class="sidebar">
-        <div class="logo">
-            <img src="../Imagenes/logo.png" alt="logo">
-            <h2>El Ricón del cachimbo</h2>
-        </div>
-        <ul class="links">
-            <h4>Menu Principal</h4>
-            <li>
-                <i class="fas fa-home"></i> <!-- Se corrigió la clase de los iconos -->
-                <a href="./inicio sin btn.html">Inicio</a>
-            </li>
-            <li>
-                <i class="far fa-calendar"></i>
-                <a href="calendario.html">Calendario</a>
-            </li>
-            <h4>Universidad</h4>
-            <li>
-                <i class="fas fa-graduation-cap"></i>
-                <a href="/templates/facultades.html">Facultades</a>
-            </li>
-            <li>
-                <i class="fas fa-futbol"></i>
-                <a href="#">Deportes</a>
-            </li>
-            <li>
-                <i class="fas fa-users"></i></i>
-                <a href="./seminario.html">Seminarios</a>
-            </li>
-            <li>
-                <i class="far fa-calendar-alt"></i>
-                <a href="#">Eventos</a>
-            </li>
-            <li>
-                <i class="fas fa-comments"></i>
-                <a href="./Conferencias.html">Conferencia</a>
-            </li>
-            <li>
-                <i class="fas fa-tools"></i>
-                <a href="./Talleres.html">Talleres</a>
-            </li>
-            <h4>Cuenta</h4>
-            <li>
-                <i class="fas fa-user-circle"></i>
-                <a href="/templates/Perfil.html">Perfil</a>
-            </li>
-            <li>
-                <i class="fas fa-bell"></i>
-                <a href="/templates/Notificaciones.html">Notificaciones</a>
-            </li>
-            <li class="logout-link">
-                <i class="fas fa-sign-out-alt"></i>
-                <a href="/templates/inicio.html">Cerrar Sesión</a><!-- Colocar la pagina inicial que creara willy-->
-            </li>
-        </ul>
-    </aside>
+    <header class="header">
+        <div class="menu__wrapper">
+            <div class="menu__bar">
+                <a href="#" title="Home" aria-label="home" class="logo">
+                    <img src="/Imagenes/logokchimbo64.ico" alt="logo">
+                </a>
+                <nav>
+                    <ul class="navigation hide">
+                        <li>
+                            <a href="../templates/inicio sin btn.html" title="Inicio">
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/templates/calendario.html" title="Calendario">
+                                Calendario
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/templates/facultades.html" title="Facultades">
+                                Facultades
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/templates/Deporte.html" title="Deportes">
+                                Deportes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/templates/seminario.html" title="Seminarios">
+                                Seminarios
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/templates/eventos.html" title="Eventos">
+                                Eventos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/templates/Conferencias.html" title="Conferencia">
+                                Conferencia
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
 
     <div class="container">
         <div class="left">
