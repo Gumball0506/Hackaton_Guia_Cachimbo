@@ -13,6 +13,7 @@ body {
     align-items: center;
     height: 100vh;
 }
+
 h1 {
     text-align: center; /* Centra el texto */
     font-family: 'Roboto', sans-serif; /* Selecciona una fuente bonita (en este caso, Roboto) */
@@ -89,106 +90,6 @@ position: relative;
 position: absolute;
 top: 0;
 right: 200px;
-}
-.sidebar {
-position: fixed;
-top: 0;
-right: 0;
-background: linear-gradient(to bottom, #1a1a2e, #16213e, #1b2a41, #1e3a4b, #1c4859, #166b63, #117a65, #0a9053, #038c43, #008c3a);
-z-index: 1000;
-height: 100%;
-display: flex;
-align-items: center;
-flex-direction: column;
-/*background: rgba(255, 255, 255, 0.2);*/
-backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(10px);
-/*border-right: 1px solid rgba(255, 255, 255, 0.7);*/
-transition: width 0.3s ease;
-}
-
-/* Ancho de la barra lateral al pasar el ratón */
-.sidebar:hover {
-width: 180px;
-}
-
-/* Estilos para el logotipo dentro de la barra lateral */
-.sidebar .logo {
-color: #000;
-display: flex;
-align-items: center;
-padding: 35px 60px 15px;
-}
-
-/* Estilos para la imagen del logotipo */
-.logo img {
-width: 64px;
-border-radius: 10%;
-}
-
-/* Estilos para el texto del logotipo */
-.logo h2 {
-color: #3feed1;
-font-size: 1.15rem;
-font-weight: 600;
-margin-left: 15px;
-display: none;
-}
-
-/* Mostrar el texto del logotipo al pasar el ratón */
-.sidebar:hover .logo h2 {
-display: block;
-}
-
-/* Estilos para los enlaces dentro de la barra lateral */
-.sidebar .links {
-list-style: none;
-margin-top: 10px;
-overflow-y: auto;
-scrollbar-width: none;
-height: calc(100% - 200px);
-}
-
-/* Ocultar la barra de desplazamiento */
-.sidebar .links::-webkit-scrollbar {
-display: none;
-}
-
-/* Estilos para los elementos de la lista de enlaces */
-.links li {
-color: #ffff;
-display: flex;
-border-radius: 4px;
-align-items: center;
-margin-bottom: 25px; /* Agrega un margen inferior para separar los elementos */
-}
-
-/* Estilos para los iconos */
-.links li .material-icons-outlined {
-margin-right: 25px; /* Agrega un margen derecho para separar los iconos de los textos */
-}
-
-
-.links li a {
-    padding: 10px;
-    color: #3feed1;
-    font-weight: 500;
-    white-space: nowrap;
-    text-decoration: none;
-    transition: all 0.3s ease; /* Transición suave para la sombra */
-}
-/* Sombra al hacer hover */
-.links li:hover {
-    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.205); /* Sombra más grande */
-} 
-/* Mostrar los enlaces al pasar el ratón */
-.sidebar:hover .links li a {
-display: block;
-}
-
-/* Estilos para el enlace de cierre de sesión */
-.links .logout-link {
-margin-top: 20px;
 }
 
  /* Estilos base para los botones */
@@ -324,4 +225,133 @@ background-color: #1da1f2; /* Color de Twitter */
         grid-gap:30px;
         padding: 35px 0px;
     }
+}
+
+:root {
+    --primary: #3ECF8E;
+    --primary-dark: #37996B;
+    --primary-darker: #317F5A;
+    --text: #F9F9F9;
+    --background: #1C1C1C;
+    --secondary: #2E2E2E;
+    --gray-border: #3E3E3E;
+    --gray-border-hover: #505050;
+    --gray-menu-button: #7E7E7E;
+    --gray-menu-button-hover: #232323;
+    --navbar-height: 4rem;
+    --gray-text-hover: #8F8F8F;
+    --gray-icon: #A0A0A0;
+}
+
+.header {
+    width: 100vw;
+    border-bottom: 1px solid var(--gray-border);
+    height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    background-color: var(--background);
+    z-index: 3;
+}
+
+
+.menu__wrapper {
+    display: flex;
+    z-index: 2;
+    justify-content: space-between;
+    z-index: 2;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 60rem;
+    padding: 0px 1rem;
+    align-items: center;
+}
+
+.menu__bar {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 1.5rem;
+}
+
+.navigation {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--background);
+}
+
+.navigation>li {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    min-height: 2.25rem;
+}
+
+.navigation>li>a {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navigation >li >a:hover {
+    color: var(--primary);
+}
+
+.navigation >li> button {
+    color: var(--text);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    margin-right: -0.25rem;
+    align-items: center;
+    min-height: 2.25rem;
+    font-size: 14px;
+    gap: 0.25rem;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    flex-wrap: nowrap;
+    padding: 0.25rem 0.7rem;
+    white-space: nowrap;
+    background: none;
+    display: flex;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation>li>button>svg {
+    margin-top: 2px;
+    fill: var(--text);
+    transition: all 0.2s ease-in-out;
+}
+
+
+.navigation>li:hover>button svg {
+    fill: var(--primary);
+    transform: rotate(0.5turn);
+}
+
+.navigation>li:hover>button {
+    color: var(--primary);
+}
+
+.navigation>li:hover .dropdown {
+    display: block;
 }
