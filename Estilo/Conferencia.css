@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: var(--secondary);
+    background: linear-gradient(to right, #77bfa3, #edeec9);
     font-family: Mulish;
     font-size: 16px;
 }
@@ -14,11 +14,9 @@ body {
 }
 
 :root {
-    --primary: #ff5500 ;
-    --secondary: #6a407e;
+    --primary: #e10f0b ; /*para el leer más*/
+    /*--secondary: #fcca46; /*para el background*/
 }
-
-
 
 .background {
     width: 100%;
