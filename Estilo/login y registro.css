@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif; /* Familia de fuentes */
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,115,0,1) 100%);
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina el relleno predeterminado */
+    display: flex; /* Utiliza el modelo de caja flexible para centrar el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Utiliza el 100% de la altura de la ventana */
+}
+
+/* Estilos para el contenedor del formulario de login */
+#login-container {
+    background-color: #ffffff; /* Color de fondo del contenedor de login */
+    border-radius: 10px; /* Borde redondeado */
+    padding: 20px; /* Relleno interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos para los campos de entrada de texto */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Relleno interno */
+    margin-bottom: 15px; /* Margen inferior */
+    border: 1px solid #ccc; /* Borde sólido con color gris */
+    border-radius: 5px; /* Borde redondeado */
+    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+}
+
+/* Estilos para el botón de enviar */
+input[type="submit"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Relleno interno */
+    background-color: #4caf50; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cursor de tipo puntero */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Cambio de color de fondo al pasar el ratón */
+}
+
+/* Estilos para las etiquetas de los campos de entrada */
+.input-label {
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilos para el contenedor del formulario de registro */
+#register-container {
+    background-color: #ffffff; /* Color de fondo del contenedor de registro */
+    border-radius: 10px; /* Borde redondeado */
+    padding: 20px; /* Relleno interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos para los campos de entrada de texto */
+input[type="date"],
+select {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Relleno interno */
+    margin-bottom: 15px; /* Margen inferior */
+    border: 1px solid #ccc; /* Borde sólido con color gris */
+    border-radius: 5px; /* Borde redondeado */
+    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+}

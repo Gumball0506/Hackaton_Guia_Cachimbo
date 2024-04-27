@@ -1,3 +1,5 @@
+/* Tu CSS existente */
+
 .profile-picture-container {
     display: flex;
     flex-direction: column; /* Apila los elementos verticalmente */
@@ -16,4 +18,10 @@
 
 .custom-button {
     margin-top: 20px; /* Espacio superior entre la imagen y el botón */
+}
+
+/* Nuevo código con el color de fondo */
+body {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,115,0,1) 100%);
 }

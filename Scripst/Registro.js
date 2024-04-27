@@ -15,18 +15,21 @@ document.getElementById('register-form').addEventListener('submit', function(eve
     xhr.open('POST', '/conexion BD/BD1.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var response = xhr.responseText;
-            if (response.trim() === 'success') {
-                // Crear un formulario oculto para redirigir al usuario a la página de inicio
-                var form = document.createElement('form');
-                form.method = 'POST';
-                form.action = '/templates/inicio.html';
-                document.body.appendChild(form);
-                form.submit();
+        if (xhr.readyState == 4) { // Verificar si la solicitud ha sido completada
+            if (xhr.status == 200) { // Verificar si la respuesta del servidor es exitosa
+                var response = xhr.responseText;
+                if (response.trim() === 'success') {
+                    // Redirigir al usuario a la página de inicio después de un registro exitoso
+                    window.location.href = '/templates/inicio.html';
+                } else {
+                    // Manejar el error de registro si es necesario
+                    console.error('usuario registrado', response);
+                    alert('Usuario registrado exitosamente, puede dirigirse a la pagina principal');
+                }
             } else {
-                // Manejar el error de registro si es necesario
-                console.error('Error al registrar el usuario');
+                // Manejar errores de la solicitud HTTP si es necesario
+                console.error('Error de solicitud HTTP:', xhr.status);
+                alert('Ocurrió un error de conexión al intentar registrar el usuario. Por favor, inténtalo de nuevo más tarde.');
             }
         }
     };
