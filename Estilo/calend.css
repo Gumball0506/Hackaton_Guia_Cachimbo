@@ -1,5 +1,5 @@
 :root {
-  --primary-clr:  #d73939;
+  --primary-clr:  #445b5a;
 }
 * {
   margin: 0;
@@ -39,7 +39,7 @@ body {
   display: flex;
 
   border-radius: 10px;
-  background-color: #EABE3F;
+  background-color: #78611f;
 }
 .left {
   width: 60%;
