@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 16-04-2024 a las 03:00:52
+-- Tiempo de generación: 27-04-2024 a las 06:05:10
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -26,9 +26,6 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `usuario`
 --
--- Creación: 15-04-2024 a las 21:57:52
--- Última actualización: 16-04-2024 a las 00:57:14
---
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
@@ -38,7 +35,8 @@ CREATE TABLE `usuario` (
   `codigo_estudiante` varchar(20) NOT NULL,
   `facultad` varchar(100) NOT NULL,
   `correo_electronico` varchar(255) NOT NULL,
-  `contraseña` varchar(255) NOT NULL
+  `contraseña` varchar(255) NOT NULL,
+  `foto_url` varchar(255) DEFAULT 'path/to/default-profile-pic.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -59,7 +57,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

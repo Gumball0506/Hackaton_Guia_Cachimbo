@@ -20,15 +20,28 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+<<<<<<< HEAD
+    height: 100%;
+    width: 60px; /* Ancho inicial de la barra lateral */
+=======
     height: 100%;
     width: 80px;
+>>>>>>> 3e985b2e0143a30803b93067f3f90999e1266c46
     display: flex;
     align-items: center;
     flex-direction: column;
+<<<<<<< HEAD
+    background: rgba(255, 255, 255, 0.2);
+=======
+>>>>>>> 3e985b2e0143a30803b93067f3f90999e1266c46
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(10px);
     transition: width 0.3s ease;
+<<<<<<< HEAD
+    z-index: 100; /* Asegura que la barra lateral esté sobre los botones de redes sociales */
+=======
     background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
+>>>>>>> 3e985b2e0143a30803b93067f3f90999e1266c46
 }
 
 /* Ancho de la barra lateral al pasar el ratón */
@@ -41,13 +54,22 @@ body {
     color: #000;
     display: flex;
     align-items: center;
+<<<<<<< HEAD
+    padding: 25px 0; /* Ajusta el espaciado superior e inferior */
+=======
     padding: 35px 60px 15px;
+>>>>>>> 3e985b2e0143a30803b93067f3f90999e1266c46
 }
 
 /* Estilos para la imagen del logotipo */
 .logo img {
+<<<<<<< HEAD
+    width: 40px; /* Tamaño de la imagen del logotipo */
+    border-radius: 50%; /* Asegura que la imagen del logotipo sea circular */
+=======
     width: 64px;
     border-radius: 10%;
+>>>>>>> 3e985b2e0143a30803b93067f3f90999e1266c46
 }
 
 /* Estilos para el texto del logotipo */
@@ -69,7 +91,7 @@ body {
     margin-top: 10px;
     overflow-y: auto;
     scrollbar-width: none;
-    height: calc(100% - 200px);
+    height: calc(100% - 140px); /* Ajusta la altura para evitar que los iconos choquen */
 }
 
 /* Ocultar la barra de desplazamiento */
@@ -82,16 +104,16 @@ body {
     display: flex;
     border-radius: 4px;
     align-items: center;
-    margin-bottom: 25px; /* Agrega un margen inferior para separar los elementos */
+    margin-bottom: 15px; /* Reduce el margen inferior para separar los elementos */
 }
 
-/* Estilos para los iconos */
-.links li .material-icons-outlined {
-    margin-right: 25px; /* Agrega un margen derecho para separar los iconos de los textos */
+/* Estilos para los iconos de la barra lateral */
+.links li i {
+    margin-right: 15px; /* Ajusta el margen derecho de los iconos */
+    font-size: 1.5rem; /* Tamaño de los iconos */
 }
 
-
-/* Estilos para los enlaces */
+/* Estilos para los enlaces de la barra lateral */
 .links li a {
     padding: 10px;
     color: #000;
